@@ -1,11 +1,11 @@
-name: CI
-run-name: ${{ github.actor }} is working on ${{ github.repository }}
+name: GitHub Actions Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,11 +25,9 @@ jobs:
       - name: Build
         run: npm run build
 
-  deploy:
+  Deploy-Production:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
