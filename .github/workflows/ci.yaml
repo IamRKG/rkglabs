@@ -6,15 +6,13 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'rkglabs/**'  
 
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: rkglabs
+        working-directory: ./
     steps:
       - uses: actions/checkout@v2
 
