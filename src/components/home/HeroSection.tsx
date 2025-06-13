@@ -90,7 +90,7 @@ export function HeroSection() {
               className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
             >
               <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-blue-600 bg-clip-text text-transparent">
-                RKG
+                Radhakrishnan Gopal
               </span>
             </h1>
           </motion.div>
